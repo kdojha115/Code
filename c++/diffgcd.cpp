@@ -19,6 +19,8 @@ void find(int n,int l,int r){
         cout << k <<" ";
     }
 }
+
+
 int main()
 {
     int t;
