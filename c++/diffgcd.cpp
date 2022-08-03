@@ -21,6 +21,7 @@ void find(int n,int l,int r){
 }
 
 
+
 int main()
 {
     int t;
