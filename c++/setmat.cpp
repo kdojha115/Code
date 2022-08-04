@@ -27,16 +27,22 @@ int main()
         }
     }
 
-    for(int i = 0;i<n;i++)
+    for(int i=0;i<row.size();i++)
     {
         for(int j=0;j<m;j++)
         {
-            if(row[i] == 0 || col[j] == 0)
-            {
-                arr[i][j] = 0;
-            }
-        }   
+            arr[row[i]][j] = 0;
+        }
     }
+    for(int i = 0;i<col.size();i++)
+    {
+        for(int j = 0 ;j<n;j++)
+        {
+            arr[j][col[i]] = 0;
+        }
+    }
+
+   
     for(int i=0;i<n;i++)
     {
         for(int j = 0;j<m;j++)
