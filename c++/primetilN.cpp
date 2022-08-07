@@ -8,10 +8,11 @@ int main()
     for(int i=n;i<=m;i++)
     {
         int  f =0;
-        for(int j=2;j*j<n;j++)
+        for(int j=2;j*j<=i;j++)
         {
-            if(j%i == 0){
+            if(i%j == 0){
                 f = 1;
+                //cout << i;
                 break;
             }
         }
