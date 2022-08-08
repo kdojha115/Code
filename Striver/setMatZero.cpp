@@ -63,8 +63,9 @@ void setZero(vector<vector<int> > &matrix){
 
 int main()
 {
-    vector<vector<int> >arr;
-    arr = {{0,1,2,0},{3,4,5,2},{1,3,1,5}};
+    vector<vector<int> > arr;
+    
+    arr = { {0,1,2,0}, {3,4,5,2}, {1,3,1,5} };
     setZero(arr);
     for(int i =0;i<arr.size();i++)
     {
