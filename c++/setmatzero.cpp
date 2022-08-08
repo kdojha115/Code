@@ -26,19 +26,24 @@ int main()
             }
         }
     }
-
+    int array[n][m];
     for(int i=0;i<row.size();i++)
     {
-        for(int j=0;j<m;j++)
-        {
-            arr[row[i]][j] = 0;
+        for(int j = 0;j<m;j++)
+        {    
+            array[row[i]][j] = 0;
         }
     }
-    for(int i = 0;i<col.size();i++)
+    for(int i = 0;i<n;i++)
     {
-        for(int j = 0 ;j<n;j++)
+        for(int j = 0,k=0 ;k<m,j<col.size();k++,j++)
         {
-            arr[j][col[i]] = 0;
+            if(j == k){
+            array[i][k] = 0;
+            }
+            else{
+                array[i][k] = 1;
+            }
         }
     }
 
@@ -47,7 +52,7 @@ int main()
     {
         for(int j = 0;j<m;j++)
         {
-            cout << arr[i][j] <<" ";
+            cout << array[i][j] <<" ";
         }
         cout << endl;
     }
