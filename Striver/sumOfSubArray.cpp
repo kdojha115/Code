@@ -14,8 +14,7 @@ int maxSubArray(vector<int>&nums,vector<int>&subarray){
     {
         for(int j=i;j<=n-1;j++){
             int sum =0;
-            for(int k =i;k<=j;k++)
-            {
+            for(int k =i;k<=j;k++){
                 sum = sum+nums[k];
             }
             if(sum > max_sum){
