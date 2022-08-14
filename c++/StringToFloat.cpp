@@ -12,7 +12,7 @@ void convert(string s)
         if(s[i] =='.')
         {
             k = (i+1);
-           // n = i+2;
+           
             continue;
         }
         num = num*10 + ((int)s[i] - 48);
@@ -20,7 +20,7 @@ void convert(string s)
     }
     int c = pow(10,k);
     num = num/c;
-    cout <<num<<endl;
+    printf("%.6f",num);
 }
 int main()
 {
