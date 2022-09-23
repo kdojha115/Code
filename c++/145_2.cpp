@@ -1,4 +1,4 @@
-// Binary Tree Postorder Traversal
+// Binary Tree Postorder Traversal using single stack
 
 #include <iostream>
 #include <vector>
@@ -27,24 +27,23 @@ vector<int> postorderTraversal(TreeNode *root)
 {
 
     vector<int> postorder;
-    if (root == NULL)
-    {
-        return postorder;
-    }
 
     stack<TreeNode *> st;
-    st.push(root);
-    while(!st.empty()){
-        root= st.top();
-        if(root->left != NULL){
-            st.push(root->left);
+    while (true) {
+        while (root) {
+            st.push(root);
+            st.push(root);
+            root = root->left;
         }
-        else if(root->right != NULL){
-            st.push(root->right);
-        }
-        else{
+        if (st.empty())
+            return postorder;
+        root = st.top();
+        st.pop();
+        if (!st.empty() && st.top() == root)
+            root = root->right;
+        else {
             postorder.push_back(root->val);
-            st.pop();
+            root = NULL;
         }
     }
     
