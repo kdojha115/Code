@@ -1,14 +1,18 @@
+//Codeforces
+// 228 A.Is your horseshoe on the other hoof?
+
+
 #include <iostream>
 
 using namespace std;
 
 int main()
 {
-    int arr[4] ={1,7,3,3};
-    /*for (int i = 0; i < 4; i++)
+    int arr[4] ;
+    for (int i = 0; i < 4; i++)
     {
         cin >> arr[i];
-    }*/
+    }
     int d = 0;
     for (int i = 0; i < 4; i++)
     {
