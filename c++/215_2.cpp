@@ -1,36 +1,55 @@
-#include<iostream>
-#include<vector>
+// leetcode
+// 414. Third Maximum Number
+
+#include <iostream>
+#include <vector>
 
 using namespace std;
 
-void printDistinct(int arr[], int n)
+int thirdMax(vector<int> &nums)
 {
-    vector<int>v;
-    for (int i=0; i<n; i++)
+    int n = nums.size();
+    vector<int> v;
+    for (int i = 0; i < n; i++)
     {
         int j;
-        for (j=0; j<i; j++)
-           if (arr[i] == arr[j])
-               break;
+        for (j = 0; j < i; j++)
+            if (nums[i] == nums[j])
+                break;
 
         if (i == j)
-            //v.push_back(arr[i]);
-
+            v.push_back(nums[i]);
+        
     }
-    sort(v.begin(),v.end());
+
+    sort(v.begin(), v.end());
     int size = v.size();
-    cout << v[size-3]<<endl;
+
+    if (size < 3)
+    {
+        return v[size - 1];
+    }
+    else
+    {
+        return v[size - 3];
+    }
 }
 
 int main()
 {
     int n;
-    cin>>n;
-    int arr[n];
-    for(int i=0;i<n;i++)
+    cin >> n;
+    vector<int> nums;
+
+    for (int i = 0; i < n; i++)
     {
-        cin>> arr[i];
+        int temp;
+        cin >> temp;
+        nums.push_back(temp);
     }
-    printDistinct(arr,n);
+
+    int k = thirdMax(nums);
+    cout << k << endl;
+
     return 0;
 }
