@@ -33,8 +33,7 @@ int main()
         cin >> temp;
         v.push_back(temp);
     }
-    int k;
-    cin >> k;
+    int k=3;
     int a = findKthLargest(v, k);
     cout << a << endl;
     return 0;
