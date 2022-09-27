@@ -5,31 +5,22 @@
 
 using namespace std;
 
-int thirdMax(int nums)
+int thirdMax(int size,int array[size])
 {
-    int n = nums.size();
-    int c=0;
-    sort(nums,nums+n);
-    int com = nums[0];
-    for (int i = 1; i < n; i++)
+    int count=1;
+    sort(array,array+size);
+    int compare = array[size-1];
+    for (int i = size-2; i >= 0; i--)
     {
-        
-        if (com == nums[i])
-            c++;
-        else{
-            com = nums[i];
+        if (compare != array[i]){
+            count++;
+            compare = array[i];
         }
+        if(count == 3)
+            return array[i];
         
     }
-    if (n < 3)
-    {
-        return nums[n - 1];
-    }
-    else
-    {
-        return nums[n - 3-c];
-    }
-
+    return array[size-1];
 }
 
 int main()
@@ -43,7 +34,7 @@ int main()
         cin >> nums[i];
     }
 
-    int k = thirdMax(nums);
+    int k = thirdMax(n,nums);
     cout << k << endl;
 
     return 0;
