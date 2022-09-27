@@ -10,6 +10,7 @@ int thirdMax(vector<int> &nums)
 {
     int n = nums.size();
     vector<int> v;
+    int c=0;
     for (int i = 0; i < n; i++)
     {
         int j;
@@ -19,9 +20,12 @@ int thirdMax(vector<int> &nums)
 
         if (i == j)
             v.push_back(nums[i]);
+        else{
+            c++;
+            v.push_back(nums[i]);
+        }
         
     }
-
     sort(v.begin(), v.end());
     int size = v.size();
 
@@ -31,7 +35,7 @@ int thirdMax(vector<int> &nums)
     }
     else
     {
-        return v[size - 3];
+        return v[size - 3-c];
     }
 }
 
@@ -53,3 +57,5 @@ int main()
 
     return 0;
 }
+
+
