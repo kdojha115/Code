@@ -1,4 +1,4 @@
-// Preorder , Inorder , Postorder Traversall in sinlge code using one stack
+// Preorder , Inorder and Postorder Traversal in single code using one stack
 
 #include <iostream>
 #include <stack>
@@ -62,7 +62,7 @@ vector<int> preInPost(TreeNode *root)
         {
             post.push_back(it.first->val);
         }
-        
+
     }
 
     cout << "Preorder" << endl;
