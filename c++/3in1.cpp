@@ -20,33 +20,33 @@ struct TreeNode* newNode(int data)
 }
 
 vector<int>preInPost(TreeNode* root){
-    stack<pair<TreeNode*,int>>st;
+    stack<pair<TreeNode*,int> > st;
     vector<int>pre,in,post;
     st.push({root,1});
     if(root == NULL) return pre;
     while(!st.empty()){
         auto it = st.top();
         st.pop();
-        if(it.second == 1)
+        if(st.top().second == 1)
         {
-            pre.push_back(it.first->val);
-            it.second++;
-            st.push(it);
-            if(it.first->left != NULL){
-                st.push(it.first->left,1);
+            pre.push_back(st.top().first->val);
+            st.top().second++;
+            st.push(st.top());
+            if(st.top().first->left != NULL){
+                st.push({st.top().first->left,1});
             }
         }
-        else if(it.second == 2){
-            in.push_back(it.first->val);
-            it.second++;
-            st.push(it);
-            if(it.first->right != NULL)
+        else if(st.top().second == 2){
+            in.push_back(st.top().first->val);
+            st.top().second++;
+            st.push(st.top());
+            if(st.top().first->right != NULL)
             {
-                st.push(it.first->right,1);
+                st.push(st.top().first->right,1);
             }
         }
         else{
-            post.push_back(it.first->val);
+            post.push_back(st.top().first->val);
         }
 
     }
