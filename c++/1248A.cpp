@@ -12,7 +12,6 @@ int main()
     while (testcase--)
     {
         long long int dls, evenDls = 0;
-        ;
         cin >> dls;
 
         long long p[dls];
