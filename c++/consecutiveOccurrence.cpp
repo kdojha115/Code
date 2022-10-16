@@ -1,3 +1,6 @@
+// Geeksforgeeks
+// Question :  Consecutive Occurrence
+
 #include<iostream>
 #include<vector>
 #include<sstream>  
